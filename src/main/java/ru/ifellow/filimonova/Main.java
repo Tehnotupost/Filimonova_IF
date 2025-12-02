@@ -5,7 +5,7 @@ import java.util.List;
 import static ru.ifellow.filimonova.Car.*;
 
 public class Main {
-    //it's Main origin
+    //it's hotfix origin
     public static void main(String[] args) {
         List<Car> cars = new ArrayList<>();
 
