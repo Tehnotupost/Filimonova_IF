@@ -1,6 +1,9 @@
 package ru.ifellow.filimonova.carbrand;
-
+import lombok.Getter;
+import lombok.Setter;
 import ru.ifellow.filimonova.Car;
+@Getter
+@Setter
 
 public class Zhiguli extends Car {
 
@@ -9,11 +12,6 @@ public class Zhiguli extends Car {
     public Zhiguli(String model, int year, String bodyType, String transmission, String color, String fuelType, int maxSpeed) {
         super(model, year, bodyType, transmission, color, fuelType);
         this.maxSpeed = maxSpeed;
-    }
-
-    public int getMaxSpeed() {
-
-        return maxSpeed;
     }
 
     @Override

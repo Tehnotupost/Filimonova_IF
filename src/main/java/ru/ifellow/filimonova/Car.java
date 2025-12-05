@@ -1,5 +1,11 @@
 package ru.ifellow.filimonova;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+
 public abstract class Car {
     protected String model;
     protected int year;
@@ -15,7 +21,8 @@ public abstract class Car {
         this.transmission = transmission;
         this.color = color;
         this.fuelType = fuelType;
-}
+    }
+
     public String getFullInfo() {
         return "Модель: " + model + "\n" +
                 "Год выпуска: " + year + "\n" +
@@ -23,37 +30,5 @@ public abstract class Car {
                 "Коробка передач: " + transmission + "\n" +
                 "Цвет: " + color + "\n" +
                 "Тип топлива: " + fuelType;
-    }
-
-    public void setColor(String newColor) {
-        this.color = newColor;
-    }
-
-    public void setFuelType(String newFuelType) {
-        this.fuelType = newFuelType;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public String getBodyType() {
-        return bodyType;
-    }
-
-    public String getTransmission() {
-        return transmission;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public String getFuelType() {
-        return fuelType;
     }
 }

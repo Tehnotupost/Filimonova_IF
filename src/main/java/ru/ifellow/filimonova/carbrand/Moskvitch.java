@@ -1,6 +1,9 @@
 package ru.ifellow.filimonova.carbrand;
-
+import lombok.Getter;
+import lombok.Setter;
 import ru.ifellow.filimonova.Car;
+@Getter
+@Setter
 
 public class Moskvitch extends Car {
 
@@ -9,11 +12,6 @@ public class Moskvitch extends Car {
     public Moskvitch(String model, int year, String bodyType, String transmission, String color, String fuelType, double engineVolume) {
         super(model, year, bodyType, transmission, color, fuelType);
         this.engineVolume = engineVolume;
-    }
-
-    public double getEngineVolume() {
-
-        return engineVolume;
     }
 
     @Override
