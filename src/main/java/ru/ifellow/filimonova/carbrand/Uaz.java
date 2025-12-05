@@ -1,4 +1,6 @@
-package ru.ifellow.filimonova;
+package ru.ifellow.filimonova.carbrand;
+
+import ru.ifellow.filimonova.Car;
 
 public class Uaz extends Car {
 

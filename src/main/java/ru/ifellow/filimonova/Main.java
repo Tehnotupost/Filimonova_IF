@@ -1,8 +1,11 @@
 package ru.ifellow.filimonova;
+import ru.ifellow.filimonova.carbrand.*;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-import static ru.ifellow.filimonova.Car.*;
+import static ru.ifellow.filimonova.caractions.*;
 
 public class Main {
     //it's Main origin
@@ -24,28 +27,45 @@ public class Main {
         cars.add(new Uaz("Patriot", 2022, "Пикап", "Автоматическая", "Оранжевый", "Бензин", 2700));
         cars.add(new Uaz("Hanter", 2010, "Внедорожник", "Механическая", "Зеленый", "Дизель", 655));
 
-        System.out.println("Список автомобилей:");
-        for (Car car : cars) {
-            System.out.println("---");
-            System.out.println(car.getFullInfo());
+        int actionNumber = 0;
+        Scanner scan = new Scanner(System.in);
+        while (actionNumber < 7) {
+            System.out.println();
+            System.out.println("Выберите действие:");
+            System.out.println("Показать все автомобили в наличии: 1");
+            System.out.println("Показать все автомобили определенного типа кузова: 2");
+            System.out.println("Показать все автомобили определенного типа КПП: 3");
+            System.out.println("Показать автомобили, выпущенные после определенного года: 4");
+            System.out.println("Изменить цвет автомобиля: 5");
+            System.out.println("Изменить тип топлива: 6");
+            System.out.println("Завершить программу: 7");
+            System.out.println();
+            System.out.println("Введите число");
+            actionNumber = scan.nextInt();
+
+        switch (actionNumber) {
+            case 1 -> {
+                System.out.println("Список автомобилей:");
+                for (Car car : cars) {
+                 System.out.println("---");
+                 System.out.println(car.getFullInfo());
+                }
+            }
+            case 2 -> printCarsBodyType(cars);
+            case 3 -> printCarsTransmission(cars);
+            case 4 -> printCarsAfterAnyEar(cars);
+            case 5 -> changeAnyColor(cars);
+            case 6 -> {
+                upgradeEngine(cars);
+                System.out.println("\nАвтомобили после смены типа топлива:");
+                for (Car car : cars) {
+                    System.out.println("---");
+                    System.out.println(car.getFullInfo());
+                }
+
+            }
+
         }
-        System.out.println("\nАвтомобили, выпущенные после 2006 года:");
-        printCarsAfter2006(cars);
-
-        changeGreenToRed(cars);
-
-        System.out.println("\nПерекрашенные втомобили:");
-        for (Car car : cars) {
-            System.out.println("---");
-            System.out.println(car.getFullInfo());
-        }
-
-        upgradeEngine(cars);
-
-        System.out.println("\nАвтомобили после апгрейда двигателя:");
-        for (Car car : cars) {
-            System.out.println("---");
-            System.out.println(car.getFullInfo());
         }
     }
 }

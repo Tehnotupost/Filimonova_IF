@@ -1,7 +1,5 @@
 package ru.ifellow.filimonova;
 
-import java.util.List;
-
 public abstract class Car {
     protected String model;
     protected int year;
@@ -58,29 +56,4 @@ public abstract class Car {
     public String getFuelType() {
         return fuelType;
     }
-
-    public static void printCarsAfter2006(List<Car> cars) {
-        for (Car car : cars) {
-            System.out.println("---");
-            if (car.getYear() > 2006) {
-                System.out.println(car.getFullInfo());
-            } else {
-                System.out.println("устаревший авто");
-            }
-        }
-    }
-    public static void changeGreenToRed(List<Car> cars) {
-        for (Car car : cars) {
-            if ("Зеленый".equals(car.getColor())) {
-                car.setColor("Красный");
-            }
-        }
-    }
-    public static void upgradeEngine(List<Car> cars) {
-            for (Car car : cars) {
-                if (car.getYear() > 2015 && !"Бензин".equals(car.getFuelType())) {
-                    car.setFuelType("Гибрид");
-                }
-            }
-        }
 }
