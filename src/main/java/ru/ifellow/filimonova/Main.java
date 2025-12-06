@@ -8,7 +8,7 @@ import java.util.Scanner;
 import static ru.ifellow.filimonova.caractions.*;
 
 public class Main {
-    //it's hotfix origin
+    //Не правильно
     public static void main(String[] args) {
         List<Car> cars = new ArrayList<>();
 
